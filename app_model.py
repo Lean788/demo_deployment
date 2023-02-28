@@ -17,7 +17,7 @@ def hello():
 # 1. Wndpoint que devuelva la predicción de los nuevos datos enviados mediante argumentos en la llamada
 @app.route('/v1/predict', methods=['GET'])
 def predict():
-    model = pickle.load(open('data/advertising_model','rb'))
+    model = pickle.load(open('advertising_model','rb'))
 
     tv = request.args.get('tv', None)
     radio = request.args.get('radio', None)
