@@ -4,7 +4,6 @@ import pickle
 from sklearn.model_selection import cross_val_score
 import pandas as pd
 import sqlite3
-import numpy as np
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import GridSearchCV
 
@@ -81,8 +80,6 @@ def retrain():
     X = df.iloc[:, 1:-1]
     y = df.iloc[:, -1]
 
-    n_train = round(((len(df))*0.8), 0)
-
     # train : las primeras filas 
     # test : las últimas filas
     n_split = int(round(((len(df))*0.8), 0))
@@ -141,4 +138,4 @@ def retrain():
     return result
 
 
-app.run()
+# app.run()
